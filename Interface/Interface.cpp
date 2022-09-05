@@ -1,6 +1,4 @@
-/*
-    Raisin
-              
+/* 
     Yamamoto, Hikaru
               
     May 27, 2021
@@ -51,13 +49,12 @@ void displayMenu() {
             << "    f. To exit" << endl;
 }
 
-
 void processChoice(CookieList& cookieList) {
-    char loop = 'y';
+    bool loop = true;
     char choice = 'a';
     string doubleLine(62, '=');
 
-    while(loop == 'y') {
+    while(loop) {
         displayMenu();
         cout << endl << "Enter your choice: ";
         cin >> choice;
@@ -71,7 +68,7 @@ void processChoice(CookieList& cookieList) {
                     cout << "  => "
                         << "There are no recipes in the list."
                         << endl;
-                    loop = 'n';
+                    loop = false;
                 }
                 else {
                     cout << line << endl 
@@ -138,7 +135,7 @@ void processChoice(CookieList& cookieList) {
             } 
 
             case 'f': {
-                loop = 'n';
+                loop = false;
                 break;
             }
 
@@ -149,14 +146,16 @@ void processChoice(CookieList& cookieList) {
             }
         }
 
-        if(loop != 'n') {
+        if(loop) {
             cout << endl << doubleLine << endl << endl;
             if(choice == 'a' || choice == 'b' || choice == 'c' 
                 || choice == 'd' || choice == 'e')
                 cout << "Would you like to continue (y/n)? ";
             else
                 cout << "Would you like to try again (y/n)? ";
-            cin >> loop;
+            char temp = 'y';
+            cin >> temp;
+            loop = (temp == 'n') ? false : true;
             cout << endl;
         }
     }
@@ -166,6 +165,5 @@ void processChoice(CookieList& cookieList) {
             << "Please contact your administrator. ";
     else
         cout << "Thank you for using our software. ";
-
     cout << "Good bye!" << endl;
 }

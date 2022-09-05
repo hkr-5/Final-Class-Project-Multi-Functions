@@ -1,6 +1,4 @@
-/*
-    Raisin
-              
+/*        
     Yamamoto, Hikaru
               
     May 19, 2021
@@ -12,7 +10,7 @@
 #include "CookieType.h"
 
 using namespace std;
-/*
+
 CookieType::CookieType() {
     calories = 0;
 }
@@ -37,4 +35,3 @@ void CookieType::setName(const string& myName) {
 void CookieType::setCalories(size_t myCalories) {
     calories = myCalories;
 }
-*/

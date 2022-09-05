@@ -1,6 +1,4 @@
-/*
-    Raisin
-              
+/*        
     Yamamoto, Hikaru
               
     May 19, 2021
@@ -11,33 +9,32 @@
 
 #include <iostream>
 
-#include "CookieType/CookieType.cpp"
-#include "Cookie/Cookie.h"
-#include "CookieType/CookieType.cpp"
-#include "Cookie/Cookie.cpp"
-
-#include "CookieList/CookieList.h"
-#include "Interface/Interface.h"
-#include "CookieDB/CookieDB.h"
-#include "Testing/Testing.h"
-#include "CookieList/CookieList.cpp"
-#include "Interface/Interface.cpp"
-#include "CookieDB/CookieDB.cpp"
-#include "Testing/Testing.cpp"
+#include "./Cookie/Cookie.h"
+#include "./Testing/Testing.h"
+#include "./CookieDB/CookieDB.h"
+#include "./Interface/Interface.h"
+#include "./CookieList/CookieList.h"
+#include "./CookieType/CookieType.h"
+#include "./Cookie/Cookie.cpp"
+#include "./Testing/Testing.cpp"
+#include "./CookieDB/CookieDB.cpp"
+#include "./Interface/Interface.cpp"
+#include "./CookieList/CookieList.cpp"
+#include "./CookieType/CookieType.cpp"
 
 using namespace std;
 
 int main() {
-    CookieList hisList;
-    createCookieList(hisList);
+    CookieList ourList;
+    createCookieList(ourList);
     displayMenu();
-    hisList.printAllCookies();
-    processChoice(hisList);
+    ourList.printAllCookies();
+    processChoice(ourList);
 
-    CookieList mine(hisList);
+    CookieList mine(ourList);
     processChoice(mine);
 
-    /*
+/*
     CookieType a;
     CookieType b("Red", 250);
     cout << b.getCalories() << " " << b.getName() << endl;

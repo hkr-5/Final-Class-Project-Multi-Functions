@@ -1,6 +1,4 @@
-/*
-    Raisin
-              
+/*           
     Yamamoto, Hikaru
               
     May 19, 2021
